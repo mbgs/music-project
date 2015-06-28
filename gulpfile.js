@@ -1,11 +1,21 @@
 /* jshint node:true */
 'use strict';
-
+//-var livereload = require('gulp-livereload');
 var gulp = require('gulp');
 var karma = require('karma').server;
 var argv = require('yargs').argv;
 var $ = require('gulp-load-plugins')();
-
+var jade = require('gulp-jade');
+ 
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+  gulp.src('src/units/*.jade')
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest('app/views/'));
+   // .pipe( livereload());
+});
 gulp.task('styles', function() {
   return gulp.src('app/styles/main.less')
     .pipe($.plumber())
@@ -94,7 +104,7 @@ gulp.task('connect', ['styles'], function() {
     });
 });
 
-gulp.task('serve', ['wiredep', 'connect', 'fonts', 'watch'], function() {
+gulp.task('serve', ['wiredep', 'connect', 'fonts', 'watch','templates'], function() {
   if (argv.open) {
     require('opn')('http://localhost:9000');
   }
@@ -135,11 +145,12 @@ gulp.task('watch', ['connect'], function() {
   $.livereload.listen();
 
   // watch for changes
-  gulp.watch([
+  gulp.watch('jade',[
     'app/**/*.html',
     '.tmp/styles/**/*.css',
     'app/scripts/**/*.js',
-    'app/images/**/*'
+    'app/images/**/*',
+    //'src/units/*.jade'
   ]).on('change', $.livereload.changed);
 
   gulp.watch('app/styles/**/*.less', ['styles']);
