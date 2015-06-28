@@ -145,7 +145,7 @@ gulp.task('watch', ['connect'], function() {
   $.livereload.listen();
 
   // watch for changes
-  gulp.watch('jade',[
+  gulp.watch([
     'app/**/*.html',
     '.tmp/styles/**/*.css',
     'app/scripts/**/*.js',
