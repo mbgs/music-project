@@ -1,0 +1,36 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'remove',
+1 verbose cli   'karma-chrome-launcher',
+1 verbose cli   'karma-firefox-launcher',
+1 verbose cli   'karma-cofee-preprocessor',
+1 verbose cli   'karma-phantomjs-launcher',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 warn uninstall not installed in /home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules: "karma-chrome-launcher"
+6 warn uninstall not installed in /home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules: "karma-firefox-launcher"
+7 warn uninstall not installed in /home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules: "karma-cofee-preprocessor"
+8 verbose node_modules/karma-phantomjs-launcher unbuild
+9 info preuninstall karma-phantomjs-launcher@0.1.4
+10 info uninstall karma-phantomjs-launcher@0.1.4
+11 verbose true,/home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules,/home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules unbuild karma-phantomjs-launcher@0.1.4
+12 info postuninstall karma-phantomjs-launcher@0.1.4
+13 error Error: EACCES, unlink '/home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs'
+13 error  { [Error: EACCES, unlink '/home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs']
+13 error   errno: 3,
+13 error   code: 'EACCES',
+13 error   path: '/home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs' }
+14 error Please try running this command again as root/Administrator.
+15 error System Linux 3.13.0-37-generic
+16 error command "/usr/bin/node" "/usr/bin/npm" "remove" "karma-chrome-launcher" "karma-firefox-launcher" "karma-cofee-preprocessor" "karma-phantomjs-launcher" "--save"
+17 error cwd /home/mbsg/Documenti/Progetti/music-project/ani-theme-master
+18 error node -v v0.10.37
+19 error npm -v 1.4.28
+20 error path /home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs
+21 error code EACCES
+22 error errno 3
+23 error stack Error: EACCES, unlink '/home/mbsg/Documenti/Progetti/music-project/ani-theme-master/node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs'
+24 verbose exit [ 3, true ]
