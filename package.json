@@ -20,6 +20,7 @@
     "gulp-flatten": "^0.0.4",
     "gulp-if": "^1.2.5",
     "gulp-inject": "^1.2.0",
+    "gulp-jade": "^1.0.1",
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
     "gulp-less": "^3.0.1",
