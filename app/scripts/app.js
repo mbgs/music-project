@@ -13,10 +13,10 @@ angular
     'ui.router',
     'ngAnimate'
   ])
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider','$urlRouterProvider','$locationProvider',function($stateProvider, $urlRouterProvider,$locationProvider) {
 
-    $urlRouterProvider.when('/dashboard', '/dashboard/overview');
-    $urlRouterProvider.otherwise('/login');
+    //$urlRouterProvider.when('/dashboard', '/dashboard/overview');
+    //$urlRouterProvider.otherwise('/login');
 
     $stateProvider
       .state('base', {
@@ -27,8 +27,20 @@ angular
         .state('login', {
           url: '/login',
           parent: 'base',
-          templateUrl: 'views/login.html',
-          controller: 'LoginCtrl'
+          templateUrl: 'views/login/page-login.html',
+          //controller: 'loginController'
+        })
+        .state('admin', {
+          url: '/admin',
+          parent: 'base',
+          templateUrl: 'views/admin/page-admin.html',
+          //controller: 'DashboardCtrl'
+        })
+        .state('student', {
+          url: '/student',
+          parent: 'base',
+          templateUrl: 'views/student/page-student.html',
+          //controller: 'DashboardCtrl'
         })
         .state('dashboard', {
           url: '/dashboard',
@@ -47,4 +59,4 @@ angular
             templateUrl: 'views/dashboard/reports.html'
           });
 
-  });
+  }]);

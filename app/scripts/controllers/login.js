@@ -8,13 +8,23 @@
  * Controller of yapp
  */
 angular.module('yapp')
-  .controller('LoginCtrl', function($scope, $location) {
+  .controller('loginController',['Prova','Login','$scope','$location', function(Prova,Login,$scope, $location) {
+ 	$scope.login=Login;
+ 	$scope.prova=Prova;
+ 	$scope.prova.provami();
+  	var role=null;
+    $scope.submit = function(username,password) {
 
-    $scope.submit = function() {
-
-      $location.path('/dashboard');
-
-      return false;
+    	
+    	role=$scope.login.checkLogin(username,password);
+    	switch(role){
+    		case 0: $location.path('/admin');
+    				break;
+    		case 1: $location.path('/student');
+    				break;
+    		default: console.log("errore nella login");
+    				break;
+    	}
+      //$location.path('/dashboard');
     }
-
-  });
+  }]);

@@ -1,0 +1,12 @@
+div(ng-controller="loginController").login-page
+	.row
+		.col-md-4.col-lg-4.col-md-offset-4.col-lg-offset-4
+			img(src="images/flat-avatar.png").user-avatar
+			h1 testo
+			form(role="form",ng-submit="submit(username,password)")
+				div.form-content
+					div.form-group
+						input(type="text",placeholder="Username",ng-model="username").form-control.input-underline.input-lg
+					div.form-group
+						input(type="password",placeholder="Password",ng-model="password").form-control.input-underline.input-lg
+				button(type="sumbit").btn.btn-primary.btn-outline.btn-lg.btn-rounded Login

@@ -6,10 +6,18 @@ var karma = require('karma').server;
 var argv = require('yargs').argv;
 var $ = require('gulp-load-plugins')();
 var jade = require('gulp-jade');
- 
+var inject= require('gulp-inject');
+
+gulp.task('index',function(){
+  var target=gulp.src('app/index.html');
+  var sources=gulp.src(['app/scripts/**/*.js'],{read: false}), {relative: true});
+  return target.pipe(inject(sources))
+    .pipe(gulp.dest('app'));
+});
+
 gulp.task('templates', function() {
   var YOUR_LOCALS = {};
-  gulp.src('src/**/**/*.jade')
+  gulp.src('src/units/**/*.jade')
     .pipe(jade({
       locals: YOUR_LOCALS
     }))
